@@ -119,6 +119,8 @@ Additional fields **MAY** be present to describe additional metadata from the fi
 - `PackageSection`: Package section of the hashed file as seen in the metadata of the Debian package format, RPM or similar package managers (CIRCL)
 - `PackageVersion`: Package version of the hashed file as seen in the metadata of the Debian package format, RPM or similar package managers (CIRCL)
 - `KnownMalicious`: List of source considering the hashed file as being malicious (CIRCL)
+- `tar:gname`: Group name used to create the Tar archive
+- `tar:uname`: User name used to create the Tar archive
 
 ### Relationships fields
 

@@ -217,7 +217,7 @@ Internet-Draft              hashlookup format                August 2021
    *  "KnownMalicious": List of source considering the hashed file as
       being malicious (CIRCL)
 
-
+   *  "tar:gname": Group name used to create the Tar archive
 
 
 
@@ -225,6 +225,8 @@ Dulaunoy & Huynen         Expires 4 March 2022                  [Page 4]
 
 Internet-Draft              hashlookup format                August 2021
 
+
+   *  "tar:uname": User name used to create the Tar archive
 
 2.3.4.  Relationships fields
 
@@ -238,8 +240,6 @@ Internet-Draft              hashlookup format                August 2021
 2.4.  Sample hashlookup output
 
 2.4.1.  Binary file
-
-
 
 
 

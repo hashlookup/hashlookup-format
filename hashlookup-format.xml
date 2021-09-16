@@ -98,6 +98,8 @@ line to be processed by the client line-by-line. Examples of JSON output are pre
 <li><tt>PackageSection</tt>: Package section of the hashed file as seen in the metadata of the Debian package format, RPM or similar package managers (CIRCL)</li>
 <li><tt>PackageVersion</tt>: Package version of the hashed file as seen in the metadata of the Debian package format, RPM or similar package managers (CIRCL)</li>
 <li><tt>KnownMalicious</tt>: List of source considering the hashed file as being malicious (CIRCL)</li>
+<li><tt>tar:gname</tt>: Group name used to create the Tar archive</li>
+<li><tt>tar:uname</tt>: User name used to create the Tar archive</li>
 </ul>
 </section>
 
