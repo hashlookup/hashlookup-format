@@ -96,6 +96,7 @@ The cryptographic hashing value **MUST** be a JSON string. The string represents
 - `MD5`
 - `SHA-1`
 - `SHA-256`
+- `SHA-512`
 
 ### Fuzzy hashing (Context Triggered Piecewise Hashing)
 
@@ -121,6 +122,8 @@ Additional fields **MAY** be present to describe additional metadata from the fi
 - `KnownMalicious`: List of source considering the hashed file as being malicious (CIRCL)
 - `tar:gname`: Group name used to create the Tar archive
 - `tar:uname`: User name used to create the Tar archive
+- `source`: Source of the hashed file
+- `insert-timestamp`: When the hashed file has been inserted in the hashlooup database
 
 ### Relationships fields
 
