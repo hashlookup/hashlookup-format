@@ -8,7 +8,7 @@ Digital forensics is a critical field in information security and especially inc
 
 ## hashlookup format
 
-- hashlookup format - Internet-Draft [00](https://datatracker.ietf.org/doc/draft-dulaunoy-hashlookup-format/)
+- hashlookup format - Internet-Draft [02](https://datatracker.ietf.org/doc/draft-dulaunoy-hashlookup-format/)
 
 ## Contributing
 
