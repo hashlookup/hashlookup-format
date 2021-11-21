@@ -123,7 +123,10 @@ Additional fields **MAY** be present to describe additional metadata from the fi
 - `tar:gname`: Group name used to create the Tar archive
 - `tar:uname`: User name used to create the Tar archive
 - `source`: Source of the hashed file
+- `db`: Db where the hashed file come from (if it's an import of an existing dataset)
 - `insert-timestamp`: When the hashed file has been inserted in the hashlooup database
+- `mimetype`: Guessed mimetype of the file (CIRCL)
+- `nsrl-sha256`: Specify if the file SHA-256 comes from the original NSRL SHA-1 to SHA-256 list
 
 ### Relationships fields
 
@@ -183,8 +186,7 @@ The value is a JSON string representing one the hashing algorithms. The `SHA-1` 
 
 # Implementation
 
-A public hashlookup service [@?HASHLOOKUP-SERVICE] is provided by CIRCL and accessible as a ReST HTTP API. A software back-end implementation which produces a hashlookup format
-output is available [@?HASHLOOKUP-SERVER].
+A public hashlookup service [@?HASHLOOKUP-SERVICE] is provided by CIRCL and accessible as a ReST HTTP API. A software back-end implementation which produces a hashlookup format output is available [@?HASHLOOKUP-SERVER]. Commercial implementation such as [@?METALOOKUP-SERVICE] provides a compatible interface with the hashlookup format. 
 
 # Security Considerations
 
@@ -224,6 +226,15 @@ The authors wish to thank all the users of the CIRCL hashlookup services for the
    <date></date>
   </front>
 </reference>
+
+<reference anchor='METALOOKUP-SERVICE' target='https://www.metalookup.com/'>
+  <front>
+   <title>Metalookup is a large database of hash values and meta information about published software. Metalookup provides a fast-lookup API to quickly check forensic evidences.</title>
+   <author initials='' surname='Metalookup service' fullname='Metalookup service operated by miwakeru.com'></author>
+   <date></date>
+  </front>
+</reference>
+
 
 <reference anchor='NSRL-RDS' target='https://www.nist.gov/system/files/data-formats-of-the-nsrl-reference-data-set-16.pdf'>
   <front>
