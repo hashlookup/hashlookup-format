@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- name="GENERATOR" content="github.com/mmarkdown/mmark Mmark Markdown Processor - mmark.miek.nl" -->
-<rfc version="3" ipr="trust200902" docName="draft-00" submissionType="independent" category="info" xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude" indexInclude="false">
+<rfc version="3" ipr="trust200902" docName="draft-00" submissionType="independent" category="info" xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude" indexInclude="true">
 
 <front>
 <title abbrev="hashlookup format">hashlookup format</title><seriesInfo value="draft-00" stream="independent" status="informational" name="Internet-Draft"></seriesInfo>
@@ -16,7 +16,7 @@
 <country>Luxembourg</country>
 </postal><phone>+352 247 88444</phone>
 <email>jean-louis.huynen@circl.lu</email>
-</address></author><date year="2021" month="August" day="31"></date>
+</address></author><date year="2022" month="June" day="23"></date>
 <area>Security</area>
 <workgroup></workgroup>
 
@@ -53,7 +53,7 @@ line to be processed by the client line-by-line. Examples of JSON output are pre
 <section anchor="rational"><name>Rational</name>
 <t>The main goal of the hashlookup format is to share common fields and to easily combine results from different sources. There are different reference library which are used in different uses-cases such as:</t>
 
-<ul>
+<ul spacing="compact">
 <li>Conducting digital forensic investigation and trace the origin of released software distribution</li>
 <li>Tracing the origin and especially the overlap between software distribution to conduct copyright assessment</li>
 <li>Improve and support cyber supply chain and its risk management</li>
@@ -67,7 +67,7 @@ line to be processed by the client line-by-line. Examples of JSON output are pre
 <section anchor="cryptographic-hashing"><name>Cryptographic hashing</name>
 <t>The cryptographic hashing value <bcp14>MUST</bcp14> be a JSON string. The string represents the hashed value of the file represented. The string <bcp14>MUST</bcp14> be the hexadecimal representation of the hash in upper case.</t>
 
-<ul>
+<ul spacing="compact">
 <li><tt>MD5</tt></li>
 <li><tt>SHA-1</tt></li>
 <li><tt>SHA-256</tt></li>
@@ -78,7 +78,7 @@ line to be processed by the client line-by-line. Examples of JSON output are pre
 <section anchor="fuzzy-hashing-context-triggered-piecewise-hashing"><name>Fuzzy hashing (Context Triggered Piecewise Hashing)</name>
 <t>The fuzzy hashing value <bcp14>MUST</bcp14> be a JSON string. The string represents the hashed value of the file represented.</t>
 
-<ul>
+<ul spacing="compact">
 <li><tt>TLSH</tt></li>
 <li><tt>SSDEEP</tt></li>
 </ul>
@@ -87,7 +87,7 @@ line to be processed by the client line-by-line. Examples of JSON output are pre
 <section anchor="additional-fields"><name>Additional fields</name>
 <t>Additional fields <bcp14>MAY</bcp14> be present to describe additional metadata from the file. The value <bcp14>MUST</bcp14> be a JSON string.</t>
 
-<ul>
+<ul spacing="compact">
 <li><tt>FileName</tt>: Filename of the hashed file (NSRL)</li>
 <li><tt>FileSize</tt>: FileSize of the hashed file (NSRL)</li>
 <li><tt>CRC</tt>: CRC of the hashed file (NSRL)</li>
@@ -169,7 +169,7 @@ The value is a JSON string representing one the hashing algorithms. The <tt>SHA-
 </section>
 
 <section anchor="implementation"><name>Implementation</name>
-<t>A public hashlookup service <xref target="HASHLOOKUP-SERVICE"></xref> is provided by CIRCL and accessible as a ReST HTTP API. A software back-end implementation which produces a hashlookup format output is available <xref target="HASHLOOKUP-SERVER"></xref>. Commercial implementation such as <xref target="METALOOKUP-SERVICE"></xref> provides a compatible interface with the hashlookup format.</t>
+<t>A public hashlookup service <xref target="HASHLOOKUP-SERVICE"></xref> is provided by CIRCL and accessible as a ReST HTTP API. A software back-end implementation which produces a hashlookup format output is available <xref target="HASHLOOKUP-SERVER"></xref>. Commercial implementation such as <xref target="METALOOKUP-SERVICE"></xref> provides a compatible interface with the hashlookup format. The hashlookup project <xref target="HASHLOOKUP-IO"></xref> provides an umbrella for all the related open source projects using hashlookup format.</t>
 </section>
 
 <section anchor="security-considerations"><name>Security Considerations</name>
@@ -195,6 +195,13 @@ of a file. hashlookup only provides the information about the presence of a file
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8259.xml"/>
 </references>
 <references><name>Informative References</name>
+<reference anchor="HASHLOOKUP-IO" target="https://www.hashlookup.io/">
+  <front>
+    <title>hashlookup project - Open source tools and standards to lookup known files</title>
+    <author fullname="hashlookup.io" surname="hashlookup project"></author>
+    <date></date>
+  </front>
+</reference>
 <reference anchor="HASHLOOKUP-SERVER" target="https://github.com/adulau/hashlookup-server">
   <front>
     <title>hashlookup-server is a minimal and fast open source server (ReST/API) to lookup quickly hash value from large dataset.</title>

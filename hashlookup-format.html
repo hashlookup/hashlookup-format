@@ -11,10 +11,10 @@
        This document describes the hashlookup output format used to express meta information of hash values seen in databases of known files.
 The output description includes a common semantic. The hashlookup format is used by public and private digital forensics investigations services. 
     " name="description">
-<meta content="xml2rfc 3.11.1" name="generator">
+<meta content="xml2rfc 3.12.1" name="generator">
 <meta content="draft-00" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.11.1
+  xml2rfc 3.12.1
     Python 3.8.10
     appdirs 1.4.4
     ConfigArgParse 1.5.3
@@ -23,14 +23,14 @@ The output description includes a common semantic. The hashlookup format is used
     intervaltree 3.1.0
     Jinja2 2.11.3
     kitchen 1.2.6
-    lxml 4.6.3
+    lxml 4.8.0
     pycairo 1.16.2
-    pycountry 20.7.3
+    pycountry 22.1.10
     pyflakes 2.4.0
-    PyYAML 5.3.1
-    requests 2.22.0
-    setuptools 58.3.0
-    six 1.12.0
+    PyYAML 6.0
+    requests 2.28.0
+    setuptools 62.1.0
+    six 1.16.0
 -->
 <link href="hashlookup-format.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1187,11 +1187,11 @@ li > p:last-of-type {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">hashlookup format</td>
-<td class="right">August 2021</td>
+<td class="right">June 2022</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Dulaunoy &amp; Huynen</td>
-<td class="center">Expires 4 March 2022</td>
+<td class="center">Expires 25 December 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1204,12 +1204,12 @@ li > p:last-of-type {
 <dd class="internet-draft">draft-00</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-08-31" class="published">31 August 2021</time>
+<time datetime="2022-06-23" class="published">23 June 2022</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2022-03-04">4 March 2022</time></dd>
+<dd class="expires"><time datetime="2022-12-25">25 December 2022</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1248,7 +1248,7 @@ The output description includes a common semantic. The hashlookup format is used
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 4 March 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 25 December 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1257,7 +1257,7 @@ The output description includes a common semantic. The hashlookup format is used
 <a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
         </h2>
 <p id="section-boilerplate.2-1">
-            Copyright (c) 2021 IETF Trust and the persons identified as the
+            Copyright (c) 2022 IETF Trust and the persons identified as the
             document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.2-2">
             This document is subject to BCP 78 and the IETF Trust's Legal
@@ -1388,12 +1388,12 @@ line to be processed by the client line-by-line. Examples of JSON output are pre
 <a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-rational" class="section-name selfRef">Rational</a>
         </h3>
 <p id="section-2.2-1">The main goal of the hashlookup format is to share common fields and to easily combine results from different sources. There are different reference library which are used in different uses-cases such as:<a href="#section-2.2-1" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-2.2-2.1">Conducting digital forensic investigation and trace the origin of released software distribution<a href="#section-2.2-2.1" class="pilcrow">¶</a>
+<ul class="compact">
+<li class="compact" id="section-2.2-2.1">Conducting digital forensic investigation and trace the origin of released software distribution<a href="#section-2.2-2.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-2.2-2.2">Tracing the origin and especially the overlap between software distribution to conduct copyright assessment<a href="#section-2.2-2.2" class="pilcrow">¶</a>
+          <li class="compact" id="section-2.2-2.2">Tracing the origin and especially the overlap between software distribution to conduct copyright assessment<a href="#section-2.2-2.2" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-2.2-2.3">Improve and support cyber supply chain and its risk management<a href="#section-2.2-2.3" class="pilcrow">¶</a>
+          <li class="compact" id="section-2.2-2.3">Improve and support cyber supply chain and its risk management<a href="#section-2.2-2.3" class="pilcrow">¶</a>
 </li>
         </ul>
 </section>
@@ -1411,17 +1411,17 @@ line to be processed by the client line-by-line. Examples of JSON output are pre
 <a href="#section-2.3.1" class="section-number selfRef">2.3.1. </a><a href="#name-cryptographic-hashing" class="section-name selfRef">Cryptographic hashing</a>
           </h4>
 <p id="section-2.3.1-1">The cryptographic hashing value <span class="bcp14">MUST</span> be a JSON string. The string represents the hashed value of the file represented. The string <span class="bcp14">MUST</span> be the hexadecimal representation of the hash in upper case.<a href="#section-2.3.1-1" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-2.3.1-2.1">
+<ul class="compact">
+<li class="compact" id="section-2.3.1-2.1">
               <code>MD5</code><a href="#section-2.3.1-2.1" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.1-2.2">
+            <li class="compact" id="section-2.3.1-2.2">
               <code>SHA-1</code><a href="#section-2.3.1-2.2" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.1-2.3">
+            <li class="compact" id="section-2.3.1-2.3">
               <code>SHA-256</code><a href="#section-2.3.1-2.3" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.1-2.4">
+            <li class="compact" id="section-2.3.1-2.4">
               <code>SHA-512</code><a href="#section-2.3.1-2.4" class="pilcrow">¶</a>
 </li>
           </ul>
@@ -1433,11 +1433,11 @@ line to be processed by the client line-by-line. Examples of JSON output are pre
 <a href="#section-2.3.2" class="section-number selfRef">2.3.2. </a><a href="#name-fuzzy-hashing-context-trigg" class="section-name selfRef">Fuzzy hashing (Context Triggered Piecewise Hashing)</a>
           </h4>
 <p id="section-2.3.2-1">The fuzzy hashing value <span class="bcp14">MUST</span> be a JSON string. The string represents the hashed value of the file represented.<a href="#section-2.3.2-1" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-2.3.2-2.1">
+<ul class="compact">
+<li class="compact" id="section-2.3.2-2.1">
               <code>TLSH</code><a href="#section-2.3.2-2.1" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.2-2.2">
+            <li class="compact" id="section-2.3.2-2.2">
               <code>SSDEEP</code><a href="#section-2.3.2-2.2" class="pilcrow">¶</a>
 </li>
           </ul>
@@ -1449,59 +1449,59 @@ line to be processed by the client line-by-line. Examples of JSON output are pre
 <a href="#section-2.3.3" class="section-number selfRef">2.3.3. </a><a href="#name-additional-fields" class="section-name selfRef">Additional fields</a>
           </h4>
 <p id="section-2.3.3-1">Additional fields <span class="bcp14">MAY</span> be present to describe additional metadata from the file. The value <span class="bcp14">MUST</span> be a JSON string.<a href="#section-2.3.3-1" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-2.3.3-2.1">
+<ul class="compact">
+<li class="compact" id="section-2.3.3-2.1">
               <code>FileName</code>: Filename of the hashed file (NSRL)<a href="#section-2.3.3-2.1" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.2">
+            <li class="compact" id="section-2.3.3-2.2">
               <code>FileSize</code>: FileSize of the hashed file (NSRL)<a href="#section-2.3.3-2.2" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.3">
+            <li class="compact" id="section-2.3.3-2.3">
               <code>CRC</code>: CRC of the hashed file (NSRL)<a href="#section-2.3.3-2.3" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.4">
+            <li class="compact" id="section-2.3.3-2.4">
               <code>SpecialCode</code>: Special code of the hashed file (NSRL) as described in <span>[<a href="#NSRL-RDS" class="xref">NSRL-RDS</a>]</span><a href="#section-2.3.3-2.4" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.5">
+            <li class="compact" id="section-2.3.3-2.5">
               <code>OpSystemCode</code>: OpSystemCode of the hashed file (NSRL) as described in <span>[<a href="#NSRL-RDS" class="xref">NSRL-RDS</a>]</span><a href="#section-2.3.3-2.5" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.6">
+            <li class="compact" id="section-2.3.3-2.6">
               <code>ProductCode</code>: ProductCode of the hashed file (NSRL) as described in <span>[<a href="#NSRL-RDS" class="xref">NSRL-RDS</a>]</span><a href="#section-2.3.3-2.6" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.7">
+            <li class="compact" id="section-2.3.3-2.7">
               <code>PackageName</code>: Package Name of the hashed file as seen in metadata of Debian pakage format, RPM or similar package managers (CIRCL)<a href="#section-2.3.3-2.7" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.8">
+            <li class="compact" id="section-2.3.3-2.8">
               <code>PackageMaintainer</code>: Package maintainer of the hashed file as seen in metadata of the Debian package format, RPM or similar package managers (CIRCL)<a href="#section-2.3.3-2.8" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.9">
+            <li class="compact" id="section-2.3.3-2.9">
               <code>PackageSection</code>: Package section of the hashed file as seen in the metadata of the Debian package format, RPM or similar package managers (CIRCL)<a href="#section-2.3.3-2.9" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.10">
+            <li class="compact" id="section-2.3.3-2.10">
               <code>PackageVersion</code>: Package version of the hashed file as seen in the metadata of the Debian package format, RPM or similar package managers (CIRCL)<a href="#section-2.3.3-2.10" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.11">
+            <li class="compact" id="section-2.3.3-2.11">
               <code>KnownMalicious</code>: List of source considering the hashed file as being malicious (CIRCL)<a href="#section-2.3.3-2.11" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.12">
+            <li class="compact" id="section-2.3.3-2.12">
               <code>tar:gname</code>: Group name used to create the Tar archive<a href="#section-2.3.3-2.12" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.13">
+            <li class="compact" id="section-2.3.3-2.13">
               <code>tar:uname</code>: User name used to create the Tar archive<a href="#section-2.3.3-2.13" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.14">
+            <li class="compact" id="section-2.3.3-2.14">
               <code>source</code>: Source of the hashed file<a href="#section-2.3.3-2.14" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.15">
+            <li class="compact" id="section-2.3.3-2.15">
               <code>db</code>: Db where the hashed file come from (if it's an import of an existing dataset)<a href="#section-2.3.3-2.15" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.16">
+            <li class="compact" id="section-2.3.3-2.16">
               <code>insert-timestamp</code>: When the hashed file has been inserted in the hashlooup database<a href="#section-2.3.3-2.16" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.17">
+            <li class="compact" id="section-2.3.3-2.17">
               <code>mimetype</code>: Guessed mimetype of the file (CIRCL)<a href="#section-2.3.3-2.17" class="pilcrow">¶</a>
 </li>
-            <li class="normal" id="section-2.3.3-2.18">
+            <li class="compact" id="section-2.3.3-2.18">
               <code>nsrl-sha256</code>: Specify if the file SHA-256 comes from the original NSRL SHA-1 to SHA-256 list<a href="#section-2.3.3-2.18" class="pilcrow">¶</a>
 </li>
           </ul>
@@ -1591,7 +1591,7 @@ The value is a JSON string representing one the hashing algorithms. The <code>SH
       <h2 id="name-implementation">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-implementation" class="section-name selfRef">Implementation</a>
       </h2>
-<p id="section-3-1">A public hashlookup service <span>[<a href="#HASHLOOKUP-SERVICE" class="xref">HASHLOOKUP-SERVICE</a>]</span> is provided by CIRCL and accessible as a ReST HTTP API. A software back-end implementation which produces a hashlookup format output is available <span>[<a href="#HASHLOOKUP-SERVER" class="xref">HASHLOOKUP-SERVER</a>]</span>. Commercial implementation such as <span>[<a href="#METALOOKUP-SERVICE" class="xref">METALOOKUP-SERVICE</a>]</span> provides a compatible interface with the hashlookup format.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">A public hashlookup service <span>[<a href="#HASHLOOKUP-SERVICE" class="xref">HASHLOOKUP-SERVICE</a>]</span> is provided by CIRCL and accessible as a ReST HTTP API. A software back-end implementation which produces a hashlookup format output is available <span>[<a href="#HASHLOOKUP-SERVER" class="xref">HASHLOOKUP-SERVER</a>]</span>. Commercial implementation such as <span>[<a href="#METALOOKUP-SERVICE" class="xref">METALOOKUP-SERVICE</a>]</span> provides a compatible interface with the hashlookup format. The hashlookup project <span>[<a href="#HASHLOOKUP-IO" class="xref">HASHLOOKUP-IO</a>]</span> provides an umbrella for all the related open source projects using hashlookup format.<a href="#section-3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
@@ -1641,6 +1641,10 @@ of a file. hashlookup only provides the information about the presence of a file
 <a href="#section-8" class="section-number selfRef">8. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
       </h2>
 <dl class="references">
+<dt id="HASHLOOKUP-IO">[HASHLOOKUP-IO]</dt>
+      <dd>
+<span class="refAuthor">hashlookup.io</span>, <span class="refTitle">"hashlookup project - Open source tools and standards to lookup known files"</span>, <span>&lt;<a href="https://www.hashlookup.io/">https://www.hashlookup.io/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="HASHLOOKUP-SERVER">[HASHLOOKUP-SERVER]</dt>
       <dd>
 <span class="refAuthor">Dulaunoy, A.</span>, <span class="refTitle">"hashlookup-server is a minimal and fast open source server (ReST/API) to lookup quickly hash value from large dataset."</span>, <span>&lt;<a href="https://github.com/adulau/hashlookup-server">https://github.com/adulau/hashlookup-server</a>&gt;</span>. </dd>

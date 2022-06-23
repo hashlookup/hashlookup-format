@@ -6,7 +6,7 @@ docName = "draft-dulaunoy-hashlookup-format"
 ipr= "trust200902"
 area = "Security"
 
-date = 2021-08-31T00:00:00Z
+date = 2022-06-23T00:00:00Z
 
 submissiontype = "independent"
 
@@ -186,7 +186,7 @@ The value is a JSON string representing one the hashing algorithms. The `SHA-1` 
 
 # Implementation
 
-A public hashlookup service [@?HASHLOOKUP-SERVICE] is provided by CIRCL and accessible as a ReST HTTP API. A software back-end implementation which produces a hashlookup format output is available [@?HASHLOOKUP-SERVER]. Commercial implementation such as [@?METALOOKUP-SERVICE] provides a compatible interface with the hashlookup format. 
+A public hashlookup service [@?HASHLOOKUP-SERVICE] is provided by CIRCL and accessible as a ReST HTTP API. A software back-end implementation which produces a hashlookup format output is available [@?HASHLOOKUP-SERVER]. Commercial implementation such as [@?METALOOKUP-SERVICE] provides a compatible interface with the hashlookup format. The hashlookup project [@?HASHLOOKUP-IO] provides an umbrella for all the related open source projects using hashlookup format.
 
 # Security Considerations
 
@@ -235,6 +235,13 @@ The authors wish to thank all the users of the CIRCL hashlookup services for the
   </front>
 </reference>
 
+<reference anchor='HASHLOOKUP-IO' target='https://www.hashlookup.io/'>
+  <front>
+   <title>hashlookup project - Open source tools and standards to lookup known files</title>
+   <author initials='' surname='hashlookup project' fullname='hashlookup.io'></author>
+   <date></date>
+  </front>
+</reference>
 
 <reference anchor='NSRL-RDS' target='https://www.nist.gov/system/files/data-formats-of-the-nsrl-reference-data-set-16.pdf'>
   <front>

@@ -5,7 +5,7 @@
 Network Working Group                                        A. Dulaunoy
 Internet-Draft                                               J-L. Huynen
 Intended status: Informational                                     CIRCL
-Expires: 4 March 2022                                     31 August 2021
+Expires: 25 December 2022                                   23 June 2022
 
 
                            hashlookup format
@@ -34,11 +34,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 March 2022.
+   This Internet-Draft will expire on 25 December 2022.
 
 Copyright Notice
 
-   Copyright (c) 2021 IETF Trust and the persons identified as the
+   Copyright (c) 2022 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Dulaunoy & Huynen         Expires 4 March 2022                  [Page 1]
+Dulaunoy & Huynen       Expires 25 December 2022                [Page 1]
 
-Internet-Draft              hashlookup format                August 2021
+Internet-Draft              hashlookup format                  June 2022
 
 
 Table of Contents
@@ -68,7 +68,7 @@ Table of Contents
      2.3.  Fields Format . . . . . . . . . . . . . . . . . . . . . .   3
        2.3.1.  Cryptographic hashing . . . . . . . . . . . . . . . .   3
        2.3.2.  Fuzzy hashing (Context Triggered Piecewise
-               Hashing)  . . . . . . . . . . . . . . . . . . . . . .   4
+               Hashing)  . . . . . . . . . . . . . . . . . . . . . .   3
        2.3.3.  Additional fields . . . . . . . . . . . . . . . . . .   4
        2.3.4.  Relationships fields  . . . . . . . . . . . . . . . .   5
      2.4.  Sample hashlookup output  . . . . . . . . . . . . . . . .   5
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Dulaunoy & Huynen         Expires 4 March 2022                  [Page 2]
+Dulaunoy & Huynen       Expires 25 December 2022                [Page 2]
 
-Internet-Draft              hashlookup format                August 2021
+Internet-Draft              hashlookup format                  June 2022
 
 
 2.1.  Overview
@@ -131,10 +131,8 @@ Internet-Draft              hashlookup format                August 2021
 
    *  Conducting digital forensic investigation and trace the origin of
       released software distribution
-
    *  Tracing the origin and especially the overlap between software
       distribution to conduct copyright assessment
-
    *  Improve and support cyber supply chain and its risk management
 
 2.3.  Fields Format
@@ -155,28 +153,24 @@ Internet-Draft              hashlookup format                August 2021
    be the hexadecimal representation of the hash in upper case.
 
    *  MD5
-
    *  SHA-1
-
    *  SHA-256
-
    *  SHA-512
-
-
-
-
-Dulaunoy & Huynen         Expires 4 March 2022                  [Page 3]
-
-Internet-Draft              hashlookup format                August 2021
-
 
 2.3.2.  Fuzzy hashing (Context Triggered Piecewise Hashing)
 
    The fuzzy hashing value MUST be a JSON string.  The string represents
    the hashed value of the file represented.
 
-   *  TLSH
 
+
+
+Dulaunoy & Huynen       Expires 25 December 2022                [Page 3]
+
+Internet-Draft              hashlookup format                  June 2022
+
+
+   *  TLSH
    *  SSDEEP
 
 2.3.3.  Additional fields
@@ -185,61 +179,52 @@ Internet-Draft              hashlookup format                August 2021
    the file.  The value MUST be a JSON string.
 
    *  FileName: Filename of the hashed file (NSRL)
-
    *  FileSize: FileSize of the hashed file (NSRL)
-
    *  CRC: CRC of the hashed file (NSRL)
-
    *  SpecialCode: Special code of the hashed file (NSRL) as described
       in [NSRL-RDS]
-
    *  OpSystemCode: OpSystemCode of the hashed file (NSRL) as described
       in [NSRL-RDS]
-
    *  ProductCode: ProductCode of the hashed file (NSRL) as described in
       [NSRL-RDS]
-
    *  PackageName: Package Name of the hashed file as seen in metadata
       of Debian pakage format, RPM or similar package managers (CIRCL)
-
    *  PackageMaintainer: Package maintainer of the hashed file as seen
       in metadata of the Debian package format, RPM or similar package
       managers (CIRCL)
-
    *  PackageSection: Package section of the hashed file as seen in the
       metadata of the Debian package format, RPM or similar package
       managers (CIRCL)
-
    *  PackageVersion: Package version of the hashed file as seen in the
       metadata of the Debian package format, RPM or similar package
       managers (CIRCL)
-
    *  KnownMalicious: List of source considering the hashed file as
       being malicious (CIRCL)
-
    *  tar:gname: Group name used to create the Tar archive
-
-
-
-Dulaunoy & Huynen         Expires 4 March 2022                  [Page 4]
-
-Internet-Draft              hashlookup format                August 2021
-
-
    *  tar:uname: User name used to create the Tar archive
-
    *  source: Source of the hashed file
-
    *  db: Db where the hashed file come from (if it's an import of an
       existing dataset)
-
    *  insert-timestamp: When the hashed file has been inserted in the
       hashlooup database
-
    *  mimetype: Guessed mimetype of the file (CIRCL)
-
    *  nsrl-sha256: Specify if the file SHA-256 comes from the original
       NSRL SHA-1 to SHA-256 list
+
+
+
+
+
+
+
+
+
+
+
+Dulaunoy & Huynen       Expires 25 December 2022                [Page 4]
+
+Internet-Draft              hashlookup format                  June 2022
+
 
 2.3.4.  Relationships fields
 
@@ -277,9 +262,24 @@ Internet-Draft              hashlookup format                August 2021
 
 
 
-Dulaunoy & Huynen         Expires 4 March 2022                  [Page 5]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dulaunoy & Huynen       Expires 25 December 2022                [Page 5]
 
-Internet-Draft              hashlookup format                August 2021
+Internet-Draft              hashlookup format                  June 2022
 
 
 {
@@ -333,9 +333,9 @@ Internet-Draft              hashlookup format                August 2021
 
 
 
-Dulaunoy & Huynen         Expires 4 March 2022                  [Page 6]
+Dulaunoy & Huynen       Expires 25 December 2022                [Page 6]
 
-Internet-Draft              hashlookup format                August 2021
+Internet-Draft              hashlookup format                  June 2022
 
 
 3.  Implementation
@@ -345,7 +345,9 @@ Internet-Draft              hashlookup format                August 2021
    implementation which produces a hashlookup format output is available
    [HASHLOOKUP-SERVER].  Commercial implementation such as
    [METALOOKUP-SERVICE] provides a compatible interface with the
-   hashlookup format.
+   hashlookup format.  The hashlookup project [HASHLOOKUP-IO] provides
+   an umbrella for all the related open source projects using hashlookup
+   format.
 
 4.  Security Considerations
 
@@ -380,19 +382,23 @@ Internet-Draft              hashlookup format                August 2021
 
 8.  Informative References
 
+   [HASHLOOKUP-IO]
+              hashlookup.io, "hashlookup project - Open source tools and
+              standards to lookup known files",
+              <https://www.hashlookup.io/>.
+
+
+
+Dulaunoy & Huynen       Expires 25 December 2022                [Page 7]
+
+Internet-Draft              hashlookup format                  June 2022
+
+
    [HASHLOOKUP-SERVER]
               Dulaunoy, A., "hashlookup-server is a minimal and fast
               open source server (ReST/API) to lookup quickly hash value
               from large dataset.",
               <https://github.com/adulau/hashlookup-server>.
-
-
-
-
-Dulaunoy & Huynen         Expires 4 March 2022                  [Page 7]
-
-Internet-Draft              hashlookup format                August 2021
-
 
    [HASHLOOKUP-SERVICE]
               CIRCL.LU, "CIRCL hash lookup is a public API to lookup
@@ -439,10 +445,4 @@ Authors' Addresses
 
 
 
-
-
-
-
-
-
-Dulaunoy & Huynen         Expires 4 March 2022                  [Page 8]
+Dulaunoy & Huynen       Expires 25 December 2022                [Page 8]
